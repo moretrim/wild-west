@@ -1,0 +1,199 @@
+# mod UUID to avoid name collisions: 0ef2b91b-3f88-4de4-b027-be2550b15dae
+# UUID mod 2^21-1 is used as the event ID pattern: 1596225xxx
+
+country_event = {
+    id = 1596225000
+    title = 0ef2b91b-3f88-4de4-b027-be2550b15dae.go_west_event_title
+    desc = 0ef2b91b-3f88-4de4-b027-be2550b15dae.go_west_event_desc
+    picture = 0ef2b91b-3f88-4de4-b027-be2550b15dae_go_west_event
+
+    is_triggered_only = yes
+    allow_multiple_instances = no # must not allow spamming the decision
+
+    option = {
+        name = 0ef2b91b-3f88-4de4-b027-be2550b15dae.go_west_event_opt0
+
+        set_global_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.gone_west
+
+        # Notes:
+        #
+        # - any_country scopes are whacky, don't ask me why
+        # - 'civilized = yes' effects won't kick in from the Westernisation events we fire(???), so we do it ourselves
+        # - don't use 90903 for the Chinese substates as that's only appropriate before the dragon wakes--additionally
+        #   the 90900 follow-ups are normally in charge of Westernising them
+
+        ## the big Chinas: The Dragon Wakes
+
+        random_owned = {
+            limit = {
+                owner = {
+                    civilized = no
+
+                    OR = {
+                        tag = CHI
+                        tag = TPG
+                        tag = QNG
+                    }
+                }
+            }
+
+            owner = {
+                civilized = yes
+                country_event = 90900
+                set_country_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.nv_change
+            }
+        }
+
+        any_country = {
+            limit = {
+                civilized = no
+
+                OR = {
+                    tag = CHI
+                    tag = TPG
+                    tag = QNG
+                }
+            }
+
+            civilized = yes
+            country_event = 90900
+            set_country_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.nv_change
+        }
+
+        ## the rest of the world
+
+        random_owned = {
+            limit = {
+                owner = {
+                    civilized = no
+
+                    NOT = {
+                        # used by HPM/HFM for setting up colonial provinces
+                        tag = UTI
+                    }
+                }
+            }
+
+            owner = {
+                civilized = yes
+                country_event = 90910
+                set_country_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.nv_change
+                remove_country_modifier = lacks_writing_system
+            }
+        }
+
+        any_country = {
+            limit = {
+                civilized = no
+
+                NOT = {
+                    # used by HPM/HFM for setting up colonial provinces
+                    tag = UTI
+                }
+            }
+
+            civilized = yes
+            country_event = 90910
+            set_country_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.nv_change
+            remove_country_modifier = lacks_writing_system
+        }
+
+        ai_will_do = { factor = 0 }
+    }
+
+    option = {
+        name = 0ef2b91b-3f88-4de4-b027-be2550b15dae.go_west_event_opt1
+
+        set_global_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.gone_west
+
+        # Neutrals...
+        SWI = {
+            country_event = 19355
+            country_event = 19356
+        }
+
+        ## the big Chinas: The Dragon Wakes
+
+        random_owned = {
+            limit = {
+                owner = {
+                    civilized = no
+
+                    OR = {
+                        tag = CHI
+                        tag = TPG
+                        tag = QNG
+                    }
+                }
+            }
+
+            owner = {
+                civilized = yes
+                country_event = 90900
+                set_country_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.nv_change
+            }
+        }
+
+        any_country = {
+            limit = {
+                civilized = no
+
+                OR = {
+                    tag = CHI
+                    tag = TPG
+                    tag = QNG
+                }
+            }
+
+            civilized = yes
+            country_event = 90900
+            set_country_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.nv_change
+        }
+
+        ## the rest of the world
+
+        random_owned = {
+            limit = {
+                owner = {
+                    civilized = no
+
+                    NOT = {
+                        # used by HPM/HFM for setting up colonial provinces
+                        tag = UTI
+                    }
+                }
+            }
+
+            owner = {
+                civilized = yes
+                country_event = 90910
+                set_country_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.nv_change
+                remove_country_modifier = lacks_writing_system
+            }
+        }
+
+        any_country = {
+            limit = {
+                civilized = no
+
+                NOT = {
+                    # used by HPM/HFM for setting up colonial provinces
+                    tag = UTI
+                }
+            }
+
+            civilized = yes
+            country_event = 90910
+            set_country_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.nv_change
+            remove_country_modifier = lacks_writing_system
+        }
+
+        ai_will_do = { factor = 0 }
+    }
+
+    option = {
+        name = 0ef2b91b-3f88-4de4-b027-be2550b15dae.go_west_event_opt2
+
+        ai_will_do = { factor = 1 }
+    }
+}

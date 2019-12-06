@@ -1,0 +1,252 @@
+# mod UUID to avoid name collisions: 0ef2b91b-3f88-4de4-b027-be2550b15dae
+
+political_decisions = {
+    0ef2b91b-3f88-4de4-b027-be2550b15dae.go_west = {
+        picture = 0ef2b91b-3f88-4de4-b027-be2550b15dae_go_west_decision
+        alert = no
+
+        potential = {
+            NOT = {
+                has_global_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.gone_west
+                year = 1837
+            }
+        }
+
+        allow = {
+            NOT = { month = 1 }
+        }
+
+        effect = {
+            country_event = 1596225000
+        }
+
+        ai_will_do = { factor = 0 }
+    }
+
+    # some events undo Westernisation, so we give an out
+    0ef2b91b-3f88-4de4-b027-be2550b15dae.rewesternisation = {
+        picture = 0ef2b91b-3f88-4de4-b027-be2550b15dae_go_west_decision
+
+        potential = {
+            has_global_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.gone_west
+
+            year = 1837
+            civilized = no
+        }
+
+        allow = {}
+
+        effect = {
+            civilized = yes
+        }
+    }
+
+    0ef2b91b-3f88-4de4-b027-be2550b15dae.switch_to_order = {
+        picture = 0ef2b91b-3f88-4de4-b027-be2550b15dae_switch_to_order
+        potential = {
+            has_global_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.gone_west
+
+            nationalvalue = nv_tradition
+            NOT = { has_country_flag = switched_nv }
+            has_country_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.nv_change
+        }
+
+        allow = {
+            NOT = { has_country_modifier = national_confusion }
+            NOT = { num_of_revolts = 1 }
+        }
+
+        effect = {
+            clr_country_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.nv_change
+            set_country_flag = switched_nv
+            nationalvalue = nv_order
+            add_country_modifier = {
+                name = national_confusion
+                duration = 3650
+            }
+            any_pop = {
+                scaled_militancy = {
+                    ideology = reactionary
+                    factor = 8
+                }
+                scaled_militancy = {
+                    ideology = conservative
+                    factor = 2
+                }
+                scaled_militancy = {
+                    ideology = liberal
+                    factor = -2
+                }
+            }
+        }
+
+        ai_will_do = { factor = 0.470 }
+    }
+
+    0ef2b91b-3f88-4de4-b027-be2550b15dae.switch_to_production = {
+        picture = 0ef2b91b-3f88-4de4-b027-be2550b15dae_switch_to_productivity
+        potential = {
+            has_global_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.gone_west
+
+            nationalvalue = nv_tradition
+            NOT = { has_country_flag = switched_nv }
+            has_country_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.nv_change
+        }
+
+        allow = {
+            NOT = { has_country_modifier = national_confusion }
+            NOT = { num_of_revolts = 1 }
+        }
+
+        effect = {
+            clr_country_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.nv_change
+            set_country_flag = switched_nv
+            nationalvalue = nv_productivity
+            add_country_modifier = {
+                name = national_confusion
+                duration = 3650
+            }
+            any_pop = {
+                scaled_militancy = {
+                    ideology = reactionary
+                    factor = 8
+                }
+                scaled_militancy = {
+                    ideology = conservative
+                    factor = 2
+                }
+                scaled_militancy = {
+                    ideology = liberal
+                    factor = -2
+                }
+            }
+        }
+
+        ai_will_do = { factor = 0.189 }
+    }
+
+    0ef2b91b-3f88-4de4-b027-be2550b15dae.switch_to_autocracy = {
+        picture = 0ef2b91b-3f88-4de4-b027-be2550b15dae_switch_to_autocracy
+        potential = {
+            has_global_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.gone_west
+
+            nationalvalue = nv_tradition
+            NOT = { has_country_flag = switched_nv }
+            has_country_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.nv_change
+        }
+
+        allow = {
+            NOT = { has_country_modifier = national_confusion }
+        }
+
+        effect = {
+            clr_country_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.nv_change
+            set_country_flag = switched_nv
+            nationalvalue = nv_autocracy
+            add_country_modifier = {
+                name = national_confusion
+                duration = 3650
+            }
+            any_pop = {
+                scaled_militancy = {
+                    ideology = reactionary
+                    factor = 8
+                }
+                scaled_militancy = {
+                    ideology = conservative
+                    factor = 2
+                }
+                scaled_militancy = {
+                    ideology = liberal
+                    factor = -2
+                }
+            }
+        }
+
+        ai_will_do = { factor = 0.767 }
+    }
+
+    0ef2b91b-3f88-4de4-b027-be2550b15dae.switch_to_equality = {
+        picture = 0ef2b91b-3f88-4de4-b027-be2550b15dae_switch_to_equality
+        potential = {
+            has_global_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.gone_west
+
+            nationalvalue = nv_tradition
+            NOT = { has_country_flag = switched_nv }
+            has_country_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.nv_change
+        }
+
+        allow = {
+            NOT = { has_country_modifier = national_confusion }
+            NOT = { num_of_revolts = 1 }
+        }
+
+        effect = {
+            clr_country_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.nv_change
+            set_country_flag = switched_nv
+            nationalvalue = nv_equality
+            add_country_modifier = {
+                name = national_confusion
+                duration = 3650
+            }
+            any_pop = {
+                scaled_militancy = {
+                    ideology = reactionary
+                    factor = 8
+                }
+                scaled_militancy = {
+                    ideology = conservative
+                    factor = 2
+                }
+                scaled_militancy = {
+                    ideology = liberal
+                    factor = -2
+                }
+            }
+        }
+
+        ai_will_do = { factor = 0.500 }
+    }
+
+    0ef2b91b-3f88-4de4-b027-be2550b15dae.switch_to_liberty = {
+        picture = 0ef2b91b-3f88-4de4-b027-be2550b15dae_switch_to_liberty
+        potential = {
+            has_global_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.gone_west
+
+            nationalvalue = nv_tradition
+            NOT = { has_country_flag = switched_nv }
+            has_country_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.nv_change
+        }
+
+        allow = {
+            NOT = { has_country_modifier = national_confusion }
+            NOT = { num_of_revolts = 1 }
+        }
+
+        effect = {
+            clr_country_flag = 0ef2b91b-3f88-4de4-b027-be2550b15dae.nv_change
+            set_country_flag = switched_nv
+            nationalvalue = nv_liberty
+            add_country_modifier = {
+                name = national_confusion
+                duration = 3650
+            }
+            any_pop = {
+                scaled_militancy = {
+                    ideology = reactionary
+                    factor = 8
+                }
+                scaled_militancy = {
+                    ideology = conservative
+                    factor = 2
+                }
+                scaled_militancy = {
+                    ideology = liberal
+                    factor = -2
+                }
+            }
+        }
+
+        ai_will_do = { factor = 1 }
+    }
+}
