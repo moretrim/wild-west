@@ -26,6 +26,15 @@ This mod does not change the number of cowboys or outlaws. Sorry.
 Installation
 ------------
 
+Since this is a submod, you need either of the following two base mods installed already:
+
+- [Historical Project Mod][HPM/releases]
+- [Historical Flavour Mod][HFM]
+
+[HPM/releases]: https://github.com/arkhometha/Historical-Project-Mod/releases
+
+Follow their respective instructions to install them if you haven’t already.
+
 Grab the [0.1.0 release].
 
 [0.1.0 release]: https://github.com/moretrim/wild-west/releases/tag/v0.1.0
