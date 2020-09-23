@@ -5,9 +5,9 @@
 <footer>Concept by electric_I.</footer>
 
 Build status:
-[![travis-master][travis-master-image]](https://travis-ci.org/moretrim/wild-west/branches)
+[![travis-master][travis-master-image]](https://travis-ci.com/moretrim/wild-west/branches)
 
-[travis-master-image]: https://travis-ci.org/moretrim/wild-west.svg?branch=master
+[travis-master-image]: https://travis-ci.com/moretrim/wild-west.svg?branch=master
 
 Description
 -----------
