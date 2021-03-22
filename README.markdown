@@ -1,13 +1,17 @@
 [![wild-west](./title.png)](https://github.com/moretrim/wild-west)
 
-> Victoria 2 Gone Wild West. 
+> Victoria 2 Gone Wild West.
 
 <footer>Concept by electric_I.</footer>
 
 Build status:
-[![travis-master][travis-master-image]](https://travis-ci.com/moretrim/wild-west/branches)
+[![Github Workflow][github-workflow-badge]][github-workflow-dashboard]
 
-[travis-master-image]: https://travis-ci.com/moretrim/wild-west.svg?branch=master
+[github-workflow-badge]:
+    https://github.com/moretrim/wild-west/actions/workflows/ci-on-push.yaml/badge.svg
+[github-workflow-dashboard]:
+    https://github.com/moretrim/wild-west/actions/workflows/ci-on-push.yaml
+    "Github Workflows"
 
 Description
 -----------
